@@ -17,15 +17,13 @@
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="text-base text-gray-900 dark:text-white px-6 py-3">
                                 Beceri Adı
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class="text-base text-gray-900 dark:text-white px-6 py-3">
                                 Resim
                             </th>
-                            <th scope="col" class="btn btn-success px-6 py-3">
-                                {{-- Güncelle / Sil --}}
-                            </th>
+                          
                         </tr>
                     </thead>
                     <tbody>
@@ -40,13 +38,14 @@
                                 </td>
                                 <td class="flex justify-end px-6 py-4">
                                     <a href="{{ route('skills.edit', $skill->id) }}"
-                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Güncelle</a>
+                                        class="px-3 py-1 bg-green-500 hover:bg-green-700 rounded-lg text-white">Güncelle</a>
                                     -
                                     <form action="{{ route('skills.destroy', $skill->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <a href="{{ route('skills.destroy', $skill->id) }}" onclick="event.preventDefault(); this.closest('form').submit();"
-                                            class="font-medium text-red-600 dark:text-red-500 hover:underline rounded-full">Sil</a>
+                                        <button class="px-3 py-1 bg-red-500 hover:bg-red-700 rounded-lg text-white"
+                                            onclick="return confirm('Beceriyi Silmek İstediğinize Eminmisiniz')">Sil
+                                        </button>
                                     </form>
                                 </td>
                             </tr>

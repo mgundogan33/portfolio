@@ -35,7 +35,7 @@ class SkillController extends Controller
                 'name' => $request->name,
                 'image' => $image
             ]);
-            return to_route('skills.index');
+            return to_route('skills.index')->with('success','Beceri Başarıyla Oluşturuldu...');
         }
         return back();
     }
@@ -62,7 +62,7 @@ class SkillController extends Controller
             'name' => $request->name,
             'image' => $image
         ]);
-        return to_route('skills.index');
+        return to_route('skills.index')->with('success','Beceri Başarıyla Güncellendi...');
     }
     public function destroy($id)
     {
@@ -70,6 +70,6 @@ class SkillController extends Controller
         Storage::delete($skills->image);
         $skills->delete();
 
-        return to_route('skills.index');
+        return to_route('skills.index')->with('danger','Beceri Başarıyla Silindi...');
     }
 }
