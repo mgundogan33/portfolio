@@ -25,7 +25,7 @@
                 <div class="max-w-7xl mx-auto">{{ session('success') }}</div>
             </div>
         @endif
-        @if (session('Silindi'))
+        @if (session('danger'))
         <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"
             role="alert">
             <div class="max-w-7xl mx-auto">{{ session('danger') }}</div>
