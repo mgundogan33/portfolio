@@ -17,6 +17,12 @@
 
 <body>
     <div class="bg-slate-200 dark:bg-slate-900">
+        @if (session('success'))
+            <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-gray-800 dark:text-green-400"
+                role="alert">
+                <div class="max-w-7xl mx-auto">{{ session('success') }}</div>
+            </div>
+        @endif
 
         <x-frontend.header></x-frontend.header>
         {{-- Header --}}

@@ -12,8 +12,8 @@ class ProjectController extends Controller
 {
     public  function index()
     {
-        $projects = Project::all();
-        // $skills = Skill::get();
+        $projects = Project::get();
+
         return view('projects.index', compact('projects'));
     }
     public function create()
